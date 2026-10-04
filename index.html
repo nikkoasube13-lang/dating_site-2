@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go On A Date With Me? ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HIDDEN CONTROLS
+    ========================== -->
+
+    <input type="radio" name="date-choice" id="start" checked>
+    <input type="radio" name="date-choice" id="no1">
+    <input type="radio" name="date-choice" id="no2">
+    <input type="radio" name="date-choice" id="no3">
+    <input type="radio" name="date-choice" id="no4">
+    <input type="radio" name="date-choice" id="yes">
+
+
+    <!-- =========================
+         QUESTION SECTION
+    ========================== -->
+
+    <section class="question">
+
+        <div class="heart">❤️</div>
+
+        <h1 class="title">
+            Can I Ask You Out On A Date?
+        </h1>
+
+        <p class="text text-start">
+            I have something to ask you... 😊
+        </p>
+
+        <p class="text text-no1">
+            Are you sure? 🥺
+        </p>
+
+        <p class="text text-no2">
+            Really? Think again... 😭
+        </p>
+
+        <p class="text text-no3">
+            Please say yes... 🥹❤️
+        </p>
+
+        <p class="text text-no4">
+            You don't have much choice now. 😂❤️
+        </p>
+
+
+        <div class="buttons">
+
+            <!-- YES BUTTONS -->
+            <label for="yes" class="yes yes-start">
+                YES ❤️
+            </label>
+
+            <label for="yes" class="yes yes-no1">
+                YES ❤️
+            </label>
+
+            <label for="yes" class="yes yes-no2">
+                YES ❤️
+            </label>
+
+            <label for="yes" class="yes yes-no3">
+                YES ❤️
+            </label>
+
+            <label for="yes" class="yes yes-no4">
+                YES ❤️
+            </label>
+
+
+            <!-- NO BUTTONS -->
+            <label for="no1" class="no no-start">
+                NO 😢
+            </label>
+
+            <label for="no2" class="no no-one">
+                NO 😢
+            </label>
+
+            <label for="no3" class="no no-two">
+                NO 😢
+            </label>
+
+            <label for="no4" class="no no-three">
+                NO 😢
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DATE SECTION
+    ========================== -->
+
+    <section class="date-section">
+
+        <div class="date-card">
+
+            <div class="big-heart">💖</div>
+
+            <h1>Yay! It's A Date! ❤️</h1>
+
+            <p class="date-text">
+                Now choose when and what we should do. 😊
+            </p>
+
+
+            <form action="mailto:nikkoasube13@gmail.com"
+                  method="post"
+                  enctype="text/plain">
+
+                <label for="date">
+                    📅 Choose Our Date
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    name="Date"
+                    required
+                >
+
+
+                <label>
+                    ✨ What should we do?
+                </label>
+
+                <div class="activities">
+
+                    <label class="activity">
+                        <input
+                            type="radio"
+                            name="Activity"
+                            value="Coffee"
+                            required
+                        >
+
+                        <span class="emoji">
+                            ☕
+                        </span>
+
+                        <span>
+                            Coffee
+                        </span>
+                    </label>
+
+
+                    <label class="activity">
+                        <input
+                            type="radio"
+                            name="Activity"
+                            value="Walking"
+                        >
+
+                        <span class="emoji">
+                            🚶
+                        </span>
+
+                        <span>
+                            Walking
+                        </span>
+                    </label>
+
+                </div>
+
+
+                <label for="message">
+                    💌 Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="Message"
+                    rows="4"
+                    placeholder="Write something..."
+                ></textarea>
+
+
+                <button type="submit">
+                    💕 Confirm Our Date
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</body>
+</html>

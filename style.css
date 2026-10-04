@@ -1,0 +1,661 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #eff6ff,
+            #ffffff
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HIDDEN RADIO BUTTONS
+========================= */
+
+input[type="radio"] {
+    display: none;
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+.question {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    min-height: 520px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px
+        rgba(30, 64, 175, 0.18);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+}
+
+
+.heart {
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.4s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.title {
+
+    color: #1e3a8a;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+
+.text {
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   TEXT CHANGES
+========================= */
+
+.text-no1,
+.text-no2,
+.text-no3,
+.text-no4 {
+
+    display: none;
+}
+
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    min-height: 100px;
+
+    width: 100%;
+}
+
+
+/* =========================
+   YES BUTTON
+========================= */
+
+.yes {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 15px;
+
+    padding: 16px 35px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform .5s,
+        font-size .5s,
+        padding .5s;
+}
+
+
+.yes:hover {
+
+    background: #1d4ed8;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   NO BUTTON
+========================= */
+
+.no {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #e2e8f0;
+
+    color: #475569;
+
+    border-radius: 15px;
+
+    padding: 16px 35px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform .5s,
+        font-size .5s,
+        padding .5s,
+        opacity .5s;
+}
+
+
+.no:hover {
+
+    background: #cbd5e1;
+}
+
+
+/* =========================
+   START STATE
+========================= */
+
+.yes-no1,
+.yes-no2,
+.yes-no3,
+.yes-no4,
+
+.no-one,
+.no-two,
+.no-three {
+
+    display: none;
+}
+
+
+/* =========================
+   NO #1
+========================= */
+
+#no1:checked ~ .question .text-start {
+    display: none;
+}
+
+#no1:checked ~ .question .text-no1 {
+    display: block;
+}
+
+
+#no1:checked ~ .question .yes-start {
+
+    transform: scale(1.2);
+
+}
+
+
+#no1:checked ~ .question .no-start {
+
+    transform: scale(.75);
+
+}
+
+
+#no1:checked ~ .question .no-start {
+    display: none;
+}
+
+#no1:checked ~ .question .no-one {
+    display: flex;
+}
+
+
+/* =========================
+   NO #2
+========================= */
+
+#no2:checked ~ .question .text-no1 {
+    display: none;
+}
+
+#no2:checked ~ .question .text-no2 {
+    display: block;
+}
+
+
+#no2:checked ~ .question .yes-start,
+#no2:checked ~ .question .yes-no1 {
+
+    transform: scale(1.45);
+
+}
+
+
+#no2:checked ~ .question .no-one {
+    display: none;
+}
+
+
+#no2:checked ~ .question .no-two {
+
+    display: flex;
+
+    transform: scale(.55);
+
+}
+
+
+/* =========================
+   NO #3
+========================= */
+
+#no3:checked ~ .question .text-no2 {
+    display: none;
+}
+
+#no3:checked ~ .question .text-no3 {
+    display: block;
+}
+
+
+#no3:checked ~ .question .yes-start,
+#no3:checked ~ .question .yes-no1,
+#no3:checked ~ .question .yes-no2 {
+
+    transform: scale(1.8);
+
+}
+
+
+#no3:checked ~ .question .no-two {
+    display: none;
+}
+
+
+#no3:checked ~ .question .no-three {
+
+    display: flex;
+
+    transform: scale(.35);
+
+}
+
+
+/* =========================
+   NO #4
+========================= */
+
+#no4:checked ~ .question .text-no3 {
+    display: none;
+}
+
+#no4:checked ~ .question .text-no4 {
+    display: block;
+}
+
+
+#no4:checked ~ .question .yes-start,
+#no4:checked ~ .question .yes-no1,
+#no4:checked ~ .question .yes-no2,
+#no4:checked ~ .question .yes-no3 {
+
+    transform: scale(2.2);
+
+}
+
+
+#no4:checked ~ .question .no-three {
+
+    transform: scale(.15);
+
+}
+
+
+/* =========================
+   DATE SECTION
+========================= */
+
+.date-section {
+
+    display: none;
+
+    width: 100%;
+
+    max-width: 550px;
+}
+
+
+#yes:checked ~ .question {
+
+    display: none;
+}
+
+
+#yes:checked ~ .date-section {
+
+    display: block;
+}
+
+
+.date-card {
+
+    background: white;
+
+    padding: 40px 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(30, 64, 175, 0.18);
+
+    text-align: center;
+}
+
+
+.big-heart {
+
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+
+.date-card h1 {
+
+    color: #1e3a8a;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.date-text {
+
+    color: #64748b;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+
+
+form {
+
+    text-align: left;
+}
+
+
+form > label {
+
+    display: block;
+
+    color: #334155;
+
+    font-weight: bold;
+
+    margin: 18px 0 8px;
+}
+
+
+input[type="date"],
+textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #dbeafe;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+}
+
+
+input[type="date"]:focus,
+textarea:focus {
+
+    border-color: #2563eb;
+}
+
+
+textarea {
+
+    resize: vertical;
+}
+
+
+/* =========================
+   ACTIVITIES
+========================= */
+
+.activities {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.activity {
+
+    border: 2px solid #dbeafe;
+
+    background: #f8fafc;
+
+    border-radius: 15px;
+
+    padding: 20px 10px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.activity input {
+
+    display: none;
+}
+
+
+.activity:hover {
+
+    border-color: #60a5fa;
+
+    background: #eff6ff;
+
+    transform: translateY(-3px);
+}
+
+
+.activity:has(input:checked) {
+
+    border-color: #2563eb;
+
+    background: #dbeafe;
+
+}
+
+
+.emoji {
+
+    display: block;
+
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+
+.activity span:last-child {
+
+    color: #334155;
+
+    font-weight: bold;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   CONFIRM BUTTON
+========================= */
+
+button {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 16px;
+
+    margin-top: 25px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+button:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .question {
+
+        min-height: 500px;
+
+        padding: 35px 20px;
+    }
+
+
+    .title {
+
+        font-size: 26px;
+    }
+
+
+    .text {
+
+        font-size: 16px;
+    }
+
+
+    .yes,
+    .no {
+
+        padding: 13px 25px;
+
+        font-size: 16px;
+    }
+
+}
